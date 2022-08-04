@@ -34,6 +34,7 @@ emailInput.addEventListener("keyup", (e) => {
   if (
     currentValue.match(nameLowerRegex) &&
     currentValue.match(atSymbolRegex) &&
+    currentValue.includes(".com") &&
     currentValue.length >= 5
   ) {
     input.classList.remove("bg-danger");
