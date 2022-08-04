@@ -7,14 +7,9 @@ const confirmPasswordInput = form.querySelector("[data-confirm-password]");
 nameInput.addEventListener("keyup", (e) => {
   // console.log(e.target.value)
   const nameInput = e.target;
-  const nameCapsRegex = /[A-Z]/;
-  const nameLowerRegex = /[a-z]/;
+  const alphabetRegex = /\w/g;
   const currentValue = nameInput.value.trim();
-  if (
-    currentValue.match(nameCapsRegex) &&
-    currentValue.match(nameLowerRegex) &&
-    currentValue.length >= 5
-  ) {
+  if (currentValue.match(alphabetRegex) && currentValue.length >= 5) {
     nameInput.classList.remove("bg-danger");
     nameInput.classList.remove("bg-white");
     nameInput.classList.add("bg-success");
